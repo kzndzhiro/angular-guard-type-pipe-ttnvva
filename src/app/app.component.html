@@ -1,0 +1,21 @@
+<ul>
+  <li *ngFor="let shape of shapes">
+    <strong>{{ shape.kind }}</strong
+    >:
+
+    <span *ngIf="shape | guardType: isCircle as circle">
+      <!-- circle is strongly typed as a Circle -->
+      radius = {{ circle.radius }}
+    </span>
+
+    <span *ngIf="shape | guardType: isSquare as square">
+      <!-- square is strongly typed as a Square -->
+      size = {{ square.size }}
+    </span>
+
+    <span *ngIf="shape | guardType: isRectangle as rectangle">
+      <!-- rectangle is strongly typed as a Rectangle -->
+      width = {{ rectangle.width }}, height = {{ rectangle.height }}
+    </span>
+  </li>
+</ul>
